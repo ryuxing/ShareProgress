@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareProgress</title>
+</head>
+<body>
+    <div id="init">
+        <div>init</div>
+        <div id="account">
+            <div style="width: 50px;height: 50px;border-radius: 50%;border: solod 1px gray;display: inline-block;background-size:contain;background-image:url('/img/noimage.png')"></div>
+            <span>ログイン</span>
+        </div>
+        <input type="text" id="input-name" placeholder="名前">
+        <input type="radio" name="input-color" id="input-color-red" value="red">
+        <label for="input-color-red">赤</label>
+        <input type="radio" name="input-color" id="input-color-blue" value="blue">
+        <label for="input-color-blue">青</label>
+        <input type="radio" name="input-color" id="input-color-yellow" value="yellow">
+        <label for="input-color-yellow">黄</label>
+        <button id="join">参加</button>
+    </div>
+    <iframe src="./pdfjs/web/viewer.html" frameborder="0" width="100%" height="600px"></iframe>
+    <script src="https://ryuxing.ga/ShareHandy/key/key.js"></script>
+    <script src="./firebase/firebase.js" type="module"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
