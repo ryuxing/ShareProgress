@@ -30,20 +30,20 @@ iframe{
 .main{
     width:100vw;
     height: calc(100vh - 90px);
-    /*display: grid;
+    display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: max(800px,60vw) 1fr;*/
+    grid-template-columns: max(800px,60vw) 1fr;
     margin: 0;
     padding: 0;
 }
-/*@media screen and (max-width : 800px) {
+@media screen and (max-width : 800px) {
     #viewer{
         display: none;
     }
     .main{
         display:block;
     }
-}*/
+}
 
 #account:hover{
     background-color: #EEE;
