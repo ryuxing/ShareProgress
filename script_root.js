@@ -5,14 +5,7 @@ window.onload = async()=>{
     authInfo = Firebase.Auth.auth.currentUser;
     initAccountStatus("",true);
     document.getElementById("account").addEventListener("click",initAccountStatus);
-    window.q = new ProgressQueue(1000);
     document.querySelector("#viewer").src="./pdfjs/web/viewer.html?file=0613演習.pdf";
-    document.querySelector("#viewer").addEventListener("load",()=>{
-        document.querySelector("#viewer").contentDocument.querySelector("#viewerContainer").addEventListener("scroll",(e)=>{
-            window.q.set(Math.round((e.target.scrollTop/e.target.scrollHeight)*1000)/10);
-            window.q.name = document.querySelector("#viewer").contentWindow.PDFViewerApplication._docFilename;
-        });
-    });
 }
 function onScrollPdfViewer(e){
     
@@ -26,7 +19,7 @@ async function initAccountStatus(elem, onlyDisplay){
         //ログイン情報を表示
         document.querySelector("#account div").style.backgroundImage = `url("${authInfo.photoURL}")`;
         document.querySelector("#account span").innerText = authInfo.name;
-        await Firebase.RTDB.set("profile/"+authInfo.uid,{color:"red",name:authInfo.name,photoURL:authInfo.photoURL})
+
         document.getElementById("join").addEventListener("click",joinRoom);
         let digits = 36 ** 5;
         peerId = authInfo.uid + "-"+ (new Date().getTime()).toString(36)+ (Math.floor(Math.random())*digits).toString(36);
@@ -44,9 +37,7 @@ async function initAccountStatus(elem, onlyDisplay){
         console.log(profile);
 
         //RTDBで進捗共有
-        q.start();
         new ProgressArea(authInfo.uid,{progress:0,file:""});
-        Firebase.RTDB.onDisconnect("progress/"+roomId+"/"+authInfo.uid,null);
         Firebase.RTDB.onValue("progress/"+roomId,ProgressArea.receive);
     }else{
         await Firebase.Auth.signOut(Firebase.Auth.auth);

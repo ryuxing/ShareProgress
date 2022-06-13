@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareProgress</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="init">
+        <div id="account">
+            <div class="icon" style="background-image:url('/img/noimage.png')"></div>
+            <span class="name">ログイン</span>
+        </div>
+        <input type="text" id="input-name" placeholder="名前">
+        <input type="radio" name="input-color" id="input-color-red" value="red">
+        <label for="input-color-red">赤</label>
+        <input type="radio" name="input-color" id="input-color-blue" value="blue">
+        <label for="input-color-blue">青</label>
+        <input type="radio" name="input-color" id="input-color-yellow" value="yellow">
+        <label for="input-color-yellow">黄</label>
+        <button id="join">参加</button>
+    </div>
+    <div class="main">
+        <iframe src="https://ryuxing.github.io/at-hand-sharing/?room=testroom" frameborder="0" id="sharehandy"></iframe>
+        <iframe src="./pdfjs/web/viewer.html" frameborder="0" id="viewer"></iframe>    
+    </div>
+    <div class="progressWrapper">
+        <svg version="1.1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
+            <defs>
+                <clipPath id="round-icon">
+                    <rect width="30" height="30" x="5" y="5" rx="15" />
+                </clipPath>
+                <linearGradient id="gradient">
+                    <stop offset="0%"   stop-color="#00FF99" />
+                    <stop offset="100%" stop-color="#00CC55" />
+                  </linearGradient>
+            </defs>
+        </svg>
+    </div>
+    <script src="https://ryuxing.ga/ShareHandy/key/key.js"></script>
+    <script src="./firebase/firebase.js" type="module"></script>
+    <script src="./script_root.js"></script>
+</body>
+</html>
