@@ -1,0 +1,155 @@
+#account{
+    border-radius: 10px;
+    box-shadow: 0px 0.5px 3px -1px black;
+    width:fit-content;
+    min-width: 150px;
+    max-width: 300px;
+    padding:5px 10px 5px 5px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+#viewer{
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    width: 100%;
+    height: 100%;
+}
+#sharehandy{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2; 
+    width: 100%;
+    height: 100%;
+}
+iframe{
+    margin: 0;
+    padding: 0;
+}
+.main{
+display: grid;
+width:100vw;
+height: calc(100vh - 90px);
+grid-template-rows: 1fr;
+grid-template-columns: max(800px,60vw) 1fr;
+margin: 0;
+padding: 0;
+}
+@media screen and (max-width : 800px) {
+    #viewer{
+        display: none;
+    }
+    .main{
+        display:block;
+    }
+}
+
+#account:hover{
+    background-color: #EEE;
+}
+#account:active{
+    background-color: #CCC;
+}
+input[type=radio],label,#join,#input-name{
+    display: none;
+}
+#account .icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+
+    /*border: solid 1px gray;*/
+    box-shadow: 0px 1px 5px -2px black;
+    display: inline-block;
+    background-size:contain;
+}
+#account .name{
+    display: inline-block;
+    max-width: 200px;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.progressWrapper{
+    position:fixed;
+    bottom: 0px;
+    left: 0px;
+}
+svg.icon{
+position:relative;
+
+}
+
+svg.icon .ratio{
+    fill: transparent;
+    cx: 20;
+    cy: 20;
+    stroke-width: 5px;
+    stroke: url(#gradient);
+    stroke-linecap: round;
+    stroke-dasharray: 110 110 ;
+    transition: stroke-dashoffset .5s;
+}
+svg.icon .pic{
+    clip-path: url(#round-icon);
+    x:5;
+    y:5;
+    
+}
+.member .svg{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0%;
+}
+.member div.option{
+    max-width: 0px;
+    padding: 0;
+    height:40px;
+    width:fit-content;
+    overflow: hidden;
+    text-align: left;
+    white-space: nowrap;
+    display: inline-block;
+    transition: max-width .3s,height .3s;
+    transition-delay: all .5s;
+
+}
+.member div.option span{
+    vertical-align: middle;
+}
+.member:hover div.option{
+    max-width:350px;
+    padding:5px 20px 5px 5px;
+    height: 30px;
+    transition-delay: 0s;
+}
+
+.member{
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: black 0px 0px 5px -2px;
+    width: 40px;
+    max-width: 40px;
+    height:40px;
+    padding: 0%;
+    margin: 5px;
+    transition: max-width .3s;
+    transition-delay: .5s;
+    overflow: hidden; 
+    white-space: nowrap;
+
+    /*display: inline-block;*/   
+}
+.member:hover{
+    max-width: 400px;
+    width: fit-content;
+    transition-delay: 0s;
+}
+.option span {
+    display: inline-block;
+    margin-right: 1em;
+}
