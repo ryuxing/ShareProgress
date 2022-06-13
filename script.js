@@ -6,7 +6,7 @@ window.onload = async()=>{
     initAccountStatus("",true);
     document.getElementById("account").addEventListener("click",initAccountStatus);
     window.q = new ProgressQueue(1000);
-    document.querySelector("#viewer").src="./pdfjs/web/viewer.html?file=IPSJ-HCI09133009.pdf";
+    document.querySelector("#viewer").src="./pdfjs/web/viewer.html?file=0613演習.pdf";
     document.querySelector("#viewer").addEventListener("load",()=>{
         document.querySelector("#viewer").contentDocument.querySelector("#viewerContainer").addEventListener("scroll",(e)=>{
             window.q.set(Math.round((e.target.scrollTop/e.target.scrollHeight)*1000)/10);
